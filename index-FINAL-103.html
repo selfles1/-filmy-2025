@@ -1,0 +1,1666 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080808">
+<title>Best of 2025 — moja lista filmów</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#f5f1e8;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.hero{padding:42px 18px 24px;max-width:1100px;margin:auto}
+.kicker{color:#d5b45c;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700}
+h1{font:700 clamp(42px,9vw,78px)/.9 Georgia,serif;margin:10px 0 14px;letter-spacing:-.04em}
+.sub{color:#999;font-size:14px;line-height:1.5}
+.stats{display:flex;gap:25px;margin-top:22px;flex-wrap:wrap}
+.stat b{font-size:25px} .stat span{display:block;color:#777;font-size:10px;text-transform:uppercase;letter-spacing:.1em}
+.progress{height:4px;background:#242424;border-radius:99px;margin-top:22px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:#d5b45c}
+.controls{position:sticky;top:0;z-index:5;background:rgba(8,8,8,.95);backdrop-filter:blur(14px);border-block:1px solid #202020;padding:11px 15px}
+.controls-in{max-width:1100px;margin:auto;display:flex;gap:7px;flex-wrap:wrap}
+input,button{font:inherit;background:#151515;color:#ddd;border:1px solid #303030;border-radius:11px;padding:10px 12px}
+input{flex:1;min-width:190px}button.active{background:#d5b45c;color:#080808;font-weight:700}
+.grid{max-width:1100px;margin:20px auto;padding:0 15px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:900px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card{background:#111;border:1px solid #252525;border-radius:14px;overflow:hidden}
+.poster{aspect-ratio:2/3;position:relative;padding:13px;display:flex;align-items:flex-end;overflow:hidden;background:
+radial-gradient(ellipse at 78% 16%,rgba(221,190,105,.42),transparent 28%),
+radial-gradient(ellipse at 15% 78%,rgba(95,104,160,.34),transparent 34%),
+linear-gradient(145deg,#302a20,#121212 52%,#050505)}
+.poster:before{content:"";position:absolute;inset:-20%;background:repeating-linear-gradient(115deg,transparent 0 34px,rgba(255,255,255,.035) 35px 36px);transform:rotate(-7deg)}
+.poster:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.12) 40%,rgba(0,0,0,.94) 100%)}
+.rank{position:absolute;z-index:2;top:11px;left:11px;color:#d5b45c;font-size:11px;letter-spacing:.12em}
+.film-mark{position:absolute;z-index:2;top:11px;right:11px;width:25px;height:25px;border:1px solid #d5b45c99;border-radius:50%;display:grid;place-items:center;color:#d5b45c;font:700 11px Georgia,serif}
+.ptitle{position:relative;z-index:2;font:700 clamp(19px,3.8vw,28px)/.95 Georgia,serif;text-shadow:0 3px 12px #000}
+.info{padding:11px} .meta{font-size:11px;color:#777;margin-bottom:9px}
+.actions{display:flex;gap:6px} .actions button{flex:1;font-size:12px;padding:9px 6px}
+.actions button.watched{border-color:#718b63;color:#c0d5b7}
+.fw{display:block;color:#ccc;text-decoration:none;border:1px solid #303030;border-radius:11px;padding:9px;font-size:12px;white-space:nowrap}
+.card.hidden{display:none}
+</style>
+</head>
+<body>
+<header class="hero">
+<div class="kicker">Best of the Year 2025</div>
+<h1>Moja lista filmów</h1>
+<div class="sub">103 filmy z Twojego zestawienia. Wyszukuj, filtruj, otwieraj Filmweb i zaznaczaj obejrzane.</div>
+<div class="stats">
+<div class="stat"><b id="total">103</b><span>filmów</span></div>
+<div class="stat"><b id="seen">0</b><span>obejrzanych</span></div>
+<div class="stat"><b id="left">103</b><span>do obejrzenia</span></div>
+</div>
+<div class="progress"><i id="bar"></i></div>
+</header>
+<nav class="controls"><div class="controls-in">
+<input id="search" type="search" placeholder="Szukaj filmu…">
+<button class="filter active" data-filter="all">Wszystkie</button>
+<button class="filter" data-filter="todo">Nieobejrzane</button>
+<button class="filter" data-filter="seen">Obejrzane</button>
+<button id="reset">Reset zaznaczeń</button>
+</div></nav>
+<main id="grid" class="grid">
+
+<article class="card" data-title="jedna bitwa po drugiej" data-nr="1">
+  <div class="poster">
+    <div class="rank">#1</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Jedna bitwa po drugiej</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="1">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Jedna%20bitwa%20po%20drugiej" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="grzesznicy" data-nr="2">
+  <div class="poster">
+    <div class="rank">#2</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Grzesznicy</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="2">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Grzesznicy" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="to był zwykły przypadek" data-nr="3">
+  <div class="poster">
+    <div class="rank">#3</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">To był zwykły przypadek</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="3">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=To%20by%C5%82%20zwyk%C5%82y%20przypadek" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="wielki marty" data-nr="4">
+  <div class="poster">
+    <div class="rank">#4</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Wielki Marty</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="4">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Wielki%20Marty" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="wartość sentymentalna" data-nr="5">
+  <div class="poster">
+    <div class="rank">#5</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Wartość sentymentalna</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="5">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Warto%C5%9B%C4%87%20sentymentalna" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="tajny agent" data-nr="6">
+  <div class="poster">
+    <div class="rank">#6</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Tajny agent</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="6">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Tajny%20agent" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="weapons" data-nr="7">
+  <div class="poster">
+    <div class="rank">#7</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Weapons</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="7">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Weapons" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the mastermind" data-nr="8">
+  <div class="poster">
+    <div class="rank">#8</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Mastermind</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="8">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Mastermind" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="sny o pociągach" data-nr="9">
+  <div class="poster">
+    <div class="rank">#9</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Sny o pociągach</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="9">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Sny%20o%20poci%C4%85gach" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="kopnęłabym cię, gdybym mogła" data-nr="10">
+  <div class="poster">
+    <div class="rank">#10</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Kopnęłabym cię, gdybym mogła</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="10">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Kopn%C4%99%C5%82abym%20ci%C4%99%2C%20gdybym%20mog%C5%82a" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="sorry, baby" data-nr="11">
+  <div class="poster">
+    <div class="rank">#11</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Sorry, Baby</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="11">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Sorry%2C%20Baby" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="sirât" data-nr="12">
+  <div class="poster">
+    <div class="rank">#12</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Sirât</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="12">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Sir%C3%A2t" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="hamnet" data-nr="13">
+  <div class="poster">
+    <div class="rank">#13</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Hamnet</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="13">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Hamnet" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="blue moon" data-nr="14">
+  <div class="poster">
+    <div class="rank">#14</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Blue Moon</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="14">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Blue%20Moon" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="bez wyjścia" data-nr="15">
+  <div class="poster">
+    <div class="rank">#15</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Bez wyjścia</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="15">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Bez%20wyj%C5%9Bcia" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the shrouds" data-nr="16">
+  <div class="poster">
+    <div class="rank">#16</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Shrouds</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="16">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Shrouds" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="frankenstein" data-nr="17">
+  <div class="poster">
+    <div class="rank">#17</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Frankenstein</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="17">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Frankenstein" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="eddington" data-nr="18">
+  <div class="poster">
+    <div class="rank">#18</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Eddington</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="18">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Eddington" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="misericordia" data-nr="19">
+  <div class="poster">
+    <div class="rank">#19</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Misericordia</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="19">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Misericordia" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="bugonia" data-nr="20">
+  <div class="poster">
+    <div class="rank">#20</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Bugonia</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="20">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Bugonia" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="28 lat później" data-nr="21">
+  <div class="poster">
+    <div class="rank">#21</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">28 lat później</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="21">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=28%20lat%20p%C3%B3%C5%BAniej" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="afternoons of solitude" data-nr="22">
+  <div class="poster">
+    <div class="rank">#22</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Afternoons of Solitude</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="22">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Afternoons%20of%20Solitude" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="caught by the tides" data-nr="23">
+  <div class="poster">
+    <div class="rank">#23</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Caught by the Tides</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="23">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Caught%20by%20the%20Tides" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="black bag" data-nr="24">
+  <div class="poster">
+    <div class="rank">#24</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Black Bag</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="24">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Black%20Bag" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="eephus" data-nr="25">
+  <div class="poster">
+    <div class="rank">#25</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Eephus</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="25">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Eephus" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="peter hujar’s day" data-nr="26">
+  <div class="poster">
+    <div class="rank">#26</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Peter Hujar’s Day</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="26">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Peter%20Hujar%27s%20Day" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="resurrection" data-nr="27">
+  <div class="poster">
+    <div class="rank">#27</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Resurrection</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="27">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Resurrection" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="wake up dead man" data-nr="28">
+  <div class="poster">
+    <div class="rank">#28</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Wake Up Dead Man</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="28">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Wake%20Up%20Dead%20Man" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="nouvelle vague" data-nr="29">
+  <div class="poster">
+    <div class="rank">#29</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Nouvelle Vague</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="29">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Nouvelle%20Vague" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="superman" data-nr="30">
+  <div class="poster">
+    <div class="rank">#30</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Superman</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="30">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Superman" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="testament ann lee" data-nr="31">
+  <div class="poster">
+    <div class="rank">#31</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Testament Ann Lee</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="31">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Testament%20Ann%20Lee" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="sound of falling" data-nr="32">
+  <div class="poster">
+    <div class="rank">#32</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Sound of Falling</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="32">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Sound%20of%20Falling" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the phoenician scheme" data-nr="33">
+  <div class="poster">
+    <div class="rank">#33</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Phoenician Scheme</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="33">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Phoenician%20Scheme" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="cloud" data-nr="34">
+  <div class="poster">
+    <div class="rank">#34</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Cloud</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="34">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Cloud" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="k-popowe łowczynie demonów" data-nr="35">
+  <div class="poster">
+    <div class="rank">#35</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">K-popowe łowczynie demonów</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="35">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=K-popowe%20%C5%82owczynie%20demon%C3%B3w" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="f1: film" data-nr="36">
+  <div class="poster">
+    <div class="rank">#36</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">F1: Film</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="36">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=F1%3A%20Film" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="my undesirable friends: part i – last air in moscow" data-nr="37">
+  <div class="poster">
+    <div class="rank">#37</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">My Undesirable Friends: Part I – Last Air in Moscow</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="37">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=My%20Undesirable%20Friends%20Part%20I" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="jay kelly" data-nr="38">
+  <div class="poster">
+    <div class="rank">#38</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Jay Kelly</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="38">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Jay%20Kelly" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="on becoming a guinea fowl" data-nr="39">
+  <div class="poster">
+    <div class="rank">#39</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">On Becoming a Guinea Fowl</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="39">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=On%20Becoming%20a%20Guinea%20Fowl" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the naked gun" data-nr="39">
+  <div class="poster">
+    <div class="rank">#39</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Naked Gun</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="39">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Naked%20Gun" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="die my love" data-nr="41">
+  <div class="poster">
+    <div class="rank">#41</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Die My Love</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="41">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Die%20My%20Love" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="friendship" data-nr="42">
+  <div class="poster">
+    <div class="rank">#42</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Friendship</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="42">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Friendship" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="idealna sąsiadka" data-nr="43">
+  <div class="poster">
+    <div class="rank">#43</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Idealna sąsiadka</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="43">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Perfect%20Neighbor" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="twinless" data-nr="44">
+  <div class="poster">
+    <div class="rank">#44</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Twinless</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="44">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Twinless" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="april" data-nr="45">
+  <div class="poster">
+    <div class="rank">#45</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">April</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="45">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=April" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="grand tour" data-nr="46">
+  <div class="poster">
+    <div class="rank">#46</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Grand Tour</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="46">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Grand%20Tour" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="magellan" data-nr="47">
+  <div class="poster">
+    <div class="rank">#47</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Magellan</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="47">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Magellan" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="by the stream" data-nr="48">
+  <div class="poster">
+    <div class="rank">#48</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">By the Stream</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="48">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=By%20the%20Stream" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="blknws: terms &amp; conditions" data-nr="48">
+  <div class="poster">
+    <div class="rank">#48</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">BLKNWS: Terms &amp; Conditions</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="48">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=BLKNWS%20Terms%20%26%20Conditions" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="familiar touch" data-nr="50">
+  <div class="poster">
+    <div class="rank">#50</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Familiar Touch</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="50">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Familiar%20Touch" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the voice of hind rajab" data-nr="51">
+  <div class="poster">
+    <div class="rank">#51</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Voice of Hind Rajab</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="51">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Voice%20of%20Hind%20Rajab" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="henry fonda for president" data-nr="52">
+  <div class="poster">
+    <div class="rank">#52</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Henry Fonda for President</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="52">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Henry%20Fonda%20for%20President" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="wojna" data-nr="53">
+  <div class="poster">
+    <div class="rank">#53</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Wojna</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="53">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Warfare" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="życie chucka" data-nr="54">
+  <div class="poster">
+    <div class="rank">#54</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Życie Chucka</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="54">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Life%20of%20Chuck" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="bring her back" data-nr="55">
+  <div class="poster">
+    <div class="rank">#55</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Bring Her Back</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="55">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Bring%20Her%20Back" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="father mother sister brother" data-nr="56">
+  <div class="poster">
+    <div class="rank">#56</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Father Mother Sister Brother</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="56">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Father%20Mother%20Sister%20Brother" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="highest 2 lowest" data-nr="57">
+  <div class="poster">
+    <div class="rank">#57</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Highest 2 Lowest</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="57">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Highest%202%20Lowest" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="materialiści" data-nr="58">
+  <div class="poster">
+    <div class="rank">#58</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Materialiści</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="58">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Materialists" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="happyend" data-nr="59">
+  <div class="poster">
+    <div class="rank">#59</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Happyend</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="59">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Happyend" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="złodziej" data-nr="59">
+  <div class="poster">
+    <div class="rank">#59</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Złodziej</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="59">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Caught%20Stealing" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="invention" data-nr="61">
+  <div class="poster">
+    <div class="rank">#61</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Invention</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="61">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Invention" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="wicked: na dobre" data-nr="62">
+  <div class="poster">
+    <div class="rank">#62</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Wicked: Na dobre</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="62">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Wicked%3A%20Na%20dobre" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="hedda" data-nr="63">
+  <div class="poster">
+    <div class="rank">#63</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Hedda</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="63">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Hedda" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="oszukać przeznaczenie: więzy krwi" data-nr="63">
+  <div class="poster">
+    <div class="rank">#63</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Oszukać przeznaczenie: Więzy krwi</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="63">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Final%20Destination%3A%20Bloodlines" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="avatar: ogień i popiół" data-nr="63">
+  <div class="poster">
+    <div class="rank">#63</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Avatar: Ogień i popiół</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="63">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Avatar%3A%20Ogie%C5%84%20i%20popi%C3%B3%C5%82" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="rental family" data-nr="63">
+  <div class="poster">
+    <div class="rank">#63</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Rental Family</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="63">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Rental%20Family" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="dracula" data-nr="63">
+  <div class="poster">
+    <div class="rank">#63</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Dracula</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="63">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Dracula%20Radu%20Jude" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="dom pełen dynamitu" data-nr="68">
+  <div class="poster">
+    <div class="rank">#68</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Dom pełen dynamitu</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="68">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Dom%20pe%C5%82en%20dynamitu" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="direct action" data-nr="69">
+  <div class="poster">
+    <div class="rank">#69</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Direct Action</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="69">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Direct%20Action" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="put your hands on your soul and walk" data-nr="69">
+  <div class="poster">
+    <div class="rank">#69</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Put Your Hands On Your Soul and Walk</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="69">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Put%20Your%20Hands%20On%20Your%20Soul%20and%20Walk" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="one of them days" data-nr="69">
+  <div class="poster">
+    <div class="rank">#69</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">One of Them Days</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="69">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=One%20of%20Them%20Days" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the long walk" data-nr="72">
+  <div class="poster">
+    <div class="rank">#72</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Long Walk</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="72">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Long%20Walk" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the ballad of wallis island" data-nr="72">
+  <div class="poster">
+    <div class="rank">#72</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Ballad of Wallis Island</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="72">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Ballad%20of%20Wallis%20Island" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="splitsville" data-nr="72">
+  <div class="poster">
+    <div class="rank">#72</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Splitsville</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="72">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Splitsville" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the ice tower" data-nr="75">
+  <div class="poster">
+    <div class="rank">#75</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Ice Tower</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="75">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Ice%20Tower" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="pillion" data-nr="76">
+  <div class="poster">
+    <div class="rank">#76</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Pillion</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="76">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Pillion" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="zodiac killer project" data-nr="76">
+  <div class="poster">
+    <div class="rank">#76</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Zodiac Killer Project</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="76">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Zodiac%20Killer%20Project" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="vulcanizadora" data-nr="78">
+  <div class="poster">
+    <div class="rank">#78</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Vulcanizadora</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="78">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Vulcanizadora" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="my father’s shadow" data-nr="79">
+  <div class="poster">
+    <div class="rank">#79</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">My Father’s Shadow</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="79">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=My%20Father%27s%20Shadow" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="roofman" data-nr="79">
+  <div class="poster">
+    <div class="rank">#79</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Roofman</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="79">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Roofman" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="lurker" data-nr="81">
+  <div class="poster">
+    <div class="rank">#81</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Lurker</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="81">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Lurker" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="mission: impossible – the final reckoning" data-nr="82">
+  <div class="poster">
+    <div class="rank">#82</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Mission: Impossible – The Final Reckoning</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="82">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Mission%3A%20Impossible%20The%20Final%20Reckoning" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="predators" data-nr="83">
+  <div class="poster">
+    <div class="rank">#83</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Predators</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="83">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Predators" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="historia souleymane’a" data-nr="84">
+  <div class="poster">
+    <div class="rank">#84</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Historia Souleymane’a</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="84">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Souleymane%27s%20Story" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="zwierzogród 2" data-nr="85">
+  <div class="poster">
+    <div class="rank">#85</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Zwierzogród 2</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="85">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Zwierzogr%C3%B3d%202" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="predator: badlands" data-nr="85">
+  <div class="poster">
+    <div class="rank">#85</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Predator: Badlands</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="85">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Predator%3A%20Badlands" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="reflection in a dead diamond" data-nr="86">
+  <div class="poster">
+    <div class="rank">#86</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Reflection in a Dead Diamond</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="86">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Reflection%20in%20a%20Dead%20Diamond" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the love that remains" data-nr="86">
+  <div class="poster">
+    <div class="rank">#86</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Love That Remains</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="86">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Love%20That%20Remains" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="cover-up" data-nr="86">
+  <div class="poster">
+    <div class="rank">#86</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Cover-Up</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="86">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Cover-Up" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="thunderbolts*" data-nr="86">
+  <div class="poster">
+    <div class="rank">#86</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Thunderbolts*</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="86">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Thunderbolts" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="mickey 17" data-nr="86">
+  <div class="poster">
+    <div class="rank">#86</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Mickey 17</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="86">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Mickey%2017" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="sny" data-nr="87">
+  <div class="poster">
+    <div class="rank">#87</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Sny</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="87">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Dreams%20Dag%20Johan%20Haugerud" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="is this thing on?" data-nr="93">
+  <div class="poster">
+    <div class="rank">#93</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Is This Thing On?</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="93">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Is%20This%20Thing%20On%3F" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="pee-wee as himself" data-nr="93">
+  <div class="poster">
+    <div class="rank">#93</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Pee-Wee as Himself</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="93">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Pee-Wee%20as%20Himself" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="7 walks with mark brown" data-nr="95">
+  <div class="poster">
+    <div class="rank">#95</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">7 Walks with Mark Brown</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="95">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=7%20Walks%20with%20Mark%20Brown" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="castration movie anthology ii: the best of both worlds" data-nr="96">
+  <div class="poster">
+    <div class="rank">#96</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Castration Movie Anthology II: The Best of Both Worlds</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="96">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Castration%20Movie%20Anthology%20II%3A%20The%20Best%20of%20Both%20Worlds" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="dreams (sex love)" data-nr="96">
+  <div class="poster">
+    <div class="rank">#96</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Dreams (Sex Love)</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="96">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Dreams%20Sex%20Love" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="companion" data-nr="97">
+  <div class="poster">
+    <div class="rank">#97</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Companion</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="97">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Companion" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="viet and nam" data-nr="98">
+  <div class="poster">
+    <div class="rank">#98</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Viet and Nam</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="98">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Viet%20and%20Nam" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="left-handed girl" data-nr="99">
+  <div class="poster">
+    <div class="rank">#99</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Left-Handed Girl</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="99">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Left-Handed%20Girl" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="fire of wind" data-nr="100">
+  <div class="poster">
+    <div class="rank">#100</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">Fire of Wind</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="100">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=Fire%20of%20Wind" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the ugly stepsister" data-nr="100">
+  <div class="poster">
+    <div class="rank">#100</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Ugly Stepsister</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="100">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Ugly%20Stepsister" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+
+<article class="card" data-title="the plague" data-nr="102">
+  <div class="poster">
+    <div class="rank">#102</div>
+    <div class="film-mark">F</div>
+    <div class="ptitle">The Plague</div>
+  </div>
+  <div class="info">
+    <div class="meta">Best of the Year 2025</div>
+    <div class="actions">
+      <button class="watch" data-watch="102">○ Nieobejrzane</button>
+      <a class="fw" href="https://www.filmweb.pl/search?q=The%20Plague" target="_blank" rel="noopener">Filmweb ↗</a>
+    </div>
+  </div>
+</article>
+</main>
+<script>
+const KEY="bestof2025-final";
+let watched={};
+try{watched=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){}
+let mode="all";
+const cards=[...document.querySelectorAll(".card")];
+
+function save(){try{localStorage.setItem(KEY,JSON.stringify(watched))}catch(e){}}
+
+function update(){
+ let seen=Object.values(watched).filter(Boolean).length;
+ document.getElementById("seen").textContent=seen;
+ document.getElementById("left").textContent=103-seen;
+ document.getElementById("bar").style.width=(seen/103*100)+"%";
+ cards.forEach(c=>{
+   const id=c.dataset.nr;
+   const b=c.querySelector("[data-watch]");
+   const isSeen=!!watched[id];
+   b.classList.toggle("watched",isSeen);
+   b.textContent=isSeen?"✓ Obejrzane":"○ Nieobejrzane";
+ });
+}
+
+function filter(){
+ const q=document.getElementById("search").value.toLowerCase().trim();
+ cards.forEach(c=>{
+   const id=c.dataset.nr;
+   const title=c.dataset.title;
+   const textOk=!q||title.includes(q);
+   const filterOk=mode==="all"||(mode==="seen"&&watched[id])||(mode==="todo"&&!watched[id]);
+   c.classList.toggle("hidden",!(textOk&&filterOk));
+ });
+}
+
+document.getElementById("grid").addEventListener("click",e=>{
+ const b=e.target.closest("[data-watch]");
+ if(!b)return;
+ const id=b.dataset.watch;
+ watched[id]=!watched[id];
+ save(); update(); filter();
+});
+
+document.getElementById("search").addEventListener("input",filter);
+
+document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
+ mode=b.dataset.filter;
+ document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));
+ b.classList.add("active"); filter();
+}));
+
+document.getElementById("reset").addEventListener("click",()=>{
+ if(confirm("Wyczyścić wszystkie zaznaczenia?")){watched={};save();update();filter();}
+});
+
+update(); filter();
+</script>
+</body>
+</html>
